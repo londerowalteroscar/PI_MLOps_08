@@ -12,6 +12,13 @@
 
 Bienvenidos al proyecto individual de **MLOps Engineer**.
 
+<h2> Bienvenido al PI_MLOps_Engineer </h2>
+    <p>Accede a la documentación:</p>
+    <ul>
+        <li><a href='http://127.0.0.1:50000/docs' >Local (FastAPI)</a></li>
+        <li><a href='https://pi-mlops-08.onrender.com' >Producción (Render)</a></li>
+        <li><a href='https://pi-mlops-08.onrender.com' >Video (GoogleDrive)</a></li>
+    </ul>
 ---
 
 # ETL-EDA

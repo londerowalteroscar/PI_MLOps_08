@@ -28,7 +28,7 @@ def mensaje():
     <p>Accede a la documentación:</p>
     <ul>
         <li><a href='http://127.0.0.1:50000/docs' >Local (FastAPI)</a></li>
-        <li><a href='https://pi-mlops-06.onrender.com/docs' >Producción (Render)</a></li>
+        <li><a href='https://pi-mlops-08.onrender.com/docs' >Producción (Render)</a></li>
     </ul>
     """
     return HTMLResponse(content=content)
@@ -284,7 +284,7 @@ def get_recommendations_knn(game_id):
 
     return recommendations_json
 
-@app.get("/recomendacion_juego_knn/{idGame}", tags=["Modelos de Recomendación Item-Item"])
+@app.get("/recomendacion_juego_knn/{id_game}", tags=["Modelos de Recomendación Item-Item"])
 def get_recomendacion_juego_knn(game_id:int):
     recommendations = get_recommendations_knn(game_id)
     return recommendations
