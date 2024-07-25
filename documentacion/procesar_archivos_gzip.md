@@ -1,4 +1,4 @@
-# Documentación Técnica del Script: **`extraer_sin_errores.py`**
+## Documentación Técnica del Script: **`procesar_archivos_gzip.py`**
 
 ## Descripción General
 
@@ -81,6 +81,8 @@ def abrir_json(archivo):
 
 ## Procesamiento de Archivos
 
+### Ruta de los Archivos
+
 ```python
 carpeta = "datasets/original"  # Asegúrate de que la carpeta exista
 archivo1 = os.path.join(carpeta, "user_reviews.json.gz")
@@ -89,8 +91,11 @@ archivo3 = os.path.join(carpeta, "steam_games.json.gz")
 ```
 
 - **Propósito**: Especificar la ruta de los archivos GZIP a procesar.
+- **Variables**:
+  - `carpeta`: Ruta de la carpeta que contiene los archivos originales.
+  - `archivo1`, `archivo2`, `archivo3`: Rutas completas de los archivos GZIP a procesar.
 
-## Lectura y Conversión a DataFrames
+### Lectura y Conversión a DataFrames
 
 ```python
 data1 = abrir_python(archivo1)
@@ -103,8 +108,12 @@ df_steam_games = pd.DataFrame(data3)
 ```
 
 - **Propósito**: Leer los datos de los archivos y convertirlos en DataFrames de `pandas`.
+- **Operaciones**:
+  - `abrir_python(archivo)`: Llama a la función para abrir archivos que contienen literales de Python.
+  - `abrir_json(archivo)`: Llama a la función para abrir archivos que contienen objetos JSON.
+  - `pd.DataFrame(data)`: Convierte las listas de datos en DataFrames.
 
-## Guardado de DataFrames como JSON
+### Guardado de DataFrames como JSON
 
 ```python
 salida_carpeta = "datasets/procesados"  # Nueva carpeta para los archivos procesados
@@ -121,9 +130,9 @@ print("Archivos JSON guardados en la carpeta 'datasets/procesados'.")
 - **Parámetros**:
   - `salida_carpeta`: Ruta de la carpeta donde se guardarán los archivos procesados.
 - **Operaciones**:
-  - Crear la carpeta de salida si no existe.
-  - Guardar cada DataFrame como un archivo JSON con el mismo nombre que el archivo original, pero sin el prefijo "se".
-  - Confirmar que los archivos han sido guardados.
+  - `os.makedirs(path, exist_ok=True)`: Crea la carpeta de salida si no existe.
+  - `to_json(path, orient, lines)`: Guarda cada DataFrame como un archivo JSON.
+  - `print(message)`: Imprime un mensaje para confirmar que los archivos han sido guardados.
 
 ---
 
