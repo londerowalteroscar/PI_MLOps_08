@@ -4,7 +4,6 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import LabelEncoder
 from scipy.stats import pearsonr
-import pandas as pd
 import json
 
 app = FastAPI()
