@@ -35,22 +35,6 @@
     * **Diagrama de caja:** Identifica valores atípicos y la distribución de los datos.
     * **Gráfico de barras:** Compara las frecuencias de categorías (por ejemplo, géneros).
     * **Gráfico de dispersión:** Explora la relación entre dos variables numéricas.
-    ```python
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
-    # Histograma de precios
-    plt.hist(df['price'], bins=20)
-    plt.xlabel('Precio')
-    plt.ylabel('Cantidad de juegos')
-    plt.title('Distribución de precios')
-    plt.show()
-
-    # Gráfico de barras de géneros más populares
-    sns.countplot(x='genres', data=df)
-    plt.xticks(rotation=45)
-    plt.show()
-    ```
 * **Correlación:**
     * `df.corr()`: Calcula la matriz de correlación para ver si hay relaciones lineales entre las variables numéricas.
 * **Análisis de texto:**
